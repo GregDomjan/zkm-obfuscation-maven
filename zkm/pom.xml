@@ -6,9 +6,10 @@
 	<parent>
 		<groupId>com.zelix</groupId>
 		<artifactId>zkm-obfuscation</artifactId>
-		<version>4.0-SNAPSHOT</version>
+		<version>1.0-SNAPSHOT</version>
 	</parent>
 
+	<version>6.0-SNAPSHOT</version>
 	<artifactId>zkm</artifactId>
 	<name>zkm</name>
 	<packaging>pom</packaging>
@@ -35,7 +36,7 @@
 							<goal>install-file</goal>
 						</goals>
 						<configuration>
-							<file>src/zkm.jar</file>
+							<file>src/unpack/zkm.jar</file>
 							<pomFile>src/pom.xml</pomFile>
 						</configuration>
 					</execution>
@@ -59,7 +60,7 @@
 							<goal>deploy-file</goal>
 						</goals>
 						<configuration>
-							<file>src/zkm.jar</file>
+							<file>src/unpack/zkm.jar</file>
 							<pomFile>src/pom.xml</pomFile>
 						</configuration>
 					</execution>

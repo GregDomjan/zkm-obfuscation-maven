@@ -4,12 +4,12 @@
 	<parent>
 		<groupId>com.zelix</groupId>
 		<artifactId>zkm-obfuscation</artifactId>
-		<version>4.0-SNAPSHOT</version>
+		<version>1.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>zkm-maven-plugin</artifactId>
 	<packaging>maven-plugin</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0-SNAPSHOT</version>
 	<name>zkm Maven Mojo</name>
 	<description>Maven plugin to execute ZKM Java Bytecode Obfuscator</description>
 
@@ -29,7 +29,7 @@
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>zkm</artifactId>
-			<version>${project.parent.version}</version>
+			<version>[6.0.*,)</version>
 		</dependency>
 
 		<dependency>
