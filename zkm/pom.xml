@@ -3,22 +3,19 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>com.zelix</groupId>
-		<artifactId>zkm-obfuscation</artifactId>
-		<version>1.0-SNAPSHOT</version>
-	</parent>
 
-	<version>6.0-SNAPSHOT</version>
+	<groupId>com.zelix</groupId>
 	<artifactId>zkm</artifactId>
+	<version>0-SNAPSHOT</version>
 	<name>zkm</name>
 	<packaging>pom</packaging>
+
+	<description>Deploy Jar file as provided by Zelix, actual pom is in src folder, zip should be unpacked to src/unpack</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-	<description>Jar file as provided by Zelix.</description>
 	<build>
 		<plugins>
 			<plugin>
@@ -30,7 +27,7 @@
 						<phase>none</phase>
 					</execution>
 					<execution>
-						<id>deploy-3rdparty</id>
+						<id>install-3rdparty</id>
 						<phase>install</phase>
 						<goals>
 							<goal>install-file</goal>
@@ -38,6 +35,32 @@
 						<configuration>
 							<file>src/unpack/zkm.jar</file>
 							<pomFile>src/pom.xml</pomFile>
+						</configuration>
+					</execution>
+					<execution>
+						<id>install-3rdparty-defaultExclude</id>
+						<phase>install</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>src/unpack/defaultExclude.txt</file>
+							<pomFile>src/pom.xml</pomFile>
+							<classifier>defaultExclude</classifier>
+							<packaging>txt</packaging>
+						</configuration>
+					</execution>
+					<execution>
+						<id>install-3rdparty-defaultTrimExclude</id>
+						<phase>install</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>src/unpack/defaultTrimExclude.txt</file>
+							<pomFile>src/pom.xml</pomFile>
+							<classifier>defaultTrimExclude</classifier>
+							<packaging>txt</packaging>
 						</configuration>
 					</execution>
 				</executions>
@@ -62,6 +85,32 @@
 						<configuration>
 							<file>src/unpack/zkm.jar</file>
 							<pomFile>src/pom.xml</pomFile>
+						</configuration>
+					</execution>
+					<execution>
+						<id>deploy-3rdparty-defaultExclude</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy-file</goal>
+						</goals>
+						<configuration>
+							<file>src/defaultExclude.txt</file>
+							<pomFile>src/pom.xml</pomFile>
+							<classifier>defaultExclude</classifier>
+							<packaging>txt</packaging>
+						</configuration>
+					</execution>
+					<execution>
+						<id>deploy-3rdparty-defaultTrimExclude</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy-file</goal>
+						</goals>
+						<configuration>
+							<file>src/defaultTrimExclude.txt</file>
+							<pomFile>src/pom.xml</pomFile>
+							<classifier>defaultTrimExclude</classifier>
+							<packaging>txt</packaging>
 						</configuration>
 					</execution>
 				</executions>

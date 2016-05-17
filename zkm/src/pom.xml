@@ -3,21 +3,25 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>com.zelix</groupId>
-		<artifactId>zkm-obfuscation</artifactId>
-		<version>1.0-SNAPSHOT</version>
-	</parent>
 
-	<version>6.0-SNAPSHOT</version>
+	<groupId>com.zelix</groupId>
 	<artifactId>zkm</artifactId>
-	<name>zkm</name>
+	<version>6.0-SNAPSHOT</version>
+	
+	<name>Zelix KlassMaster</name>
+	<packaging>jar</packaging>
+
+	<description>KlassMaster zkm.jar file as provided by Zelix, with associated default config files.</description>
+
+	<url>http://www.zelix.com/klassmaster</url>
+	<organization>
+		<name>Zelix Pty Ltd</name>
+		<url>http://www.zelix.com/klassmaster/contactUs.html</url>
+	</organization>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
-	<description>Jar file as provided by Zelix.</description>
 
 	<licenses>
 		<license>

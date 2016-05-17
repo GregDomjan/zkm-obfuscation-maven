@@ -201,13 +201,11 @@ public class ZelixKlassMasterMojo extends AbstractMojo {
 	protected Set<Artifact> pluginArtifacts;
 
 	public void execute() throws MojoExecutionException, MojoFailureException {
-		Log log = getLog();
-		log.info("Zelix KlassMaster Plugin");
 		if (isSkip) {
-			log.info("Skipping Zelix KlassMaster obfuscation because isSkip is set to 'true'");
+			getLog().info("Skipping Zelix KlassMaster obfuscation because isSkip is set to 'true'");
 			return;
 		}
-		if (scriptFile == null) {
+		if (scriptFile == null || scriptFile.length() == 0) {
 			throw new MojoFailureException("ZKM Script file is null");
 		}
 		if (!scriptFile.exists() || scriptFile.isDirectory()) {
@@ -299,7 +297,7 @@ public class ZelixKlassMasterMojo extends AbstractMojo {
 			com.zelix.ZKM.run(scriptFile.getAbsolutePath(), logFileName, trimLogFileName, defaultExcludeFileName,
 					defaultTrimExcludeFileName, defaultDirectoryName, isVerbose, isParseOnly, extraProperties);
 		} catch (Exception ex) {
-			log.info(ex);
+			getLog().info(ex);
 			throw new MojoFailureException(ex.toString());
 		}
 	}

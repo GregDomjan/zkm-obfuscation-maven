@@ -2,3 +2,7 @@ target/
 .settings
 .project
 .classpath
+zkm/src/defaultExclude.txt
+zkm/src/defaultTrimExclude.txt
+zkm/src/license.html
+/zkm/src/unpack
